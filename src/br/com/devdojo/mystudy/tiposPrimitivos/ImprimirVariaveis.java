@@ -26,7 +26,16 @@ public class ImprimirVariaveis{
 		*/
 		int idadeEmAnos=19;
 		//variaveis primeira letra minuscula e as outras palavras essa em maiuscula CamiCase
-		saida.println("Dados Impressos:\n"+"idade: "+idadeEmAnos+"\n");
+		saida.println("Dados Impressos:\n"+"idade: "+idadeEmAnos+"\n");	
+		double salario=3000;
+		float salariof=300;
+		byte idadeb=12;
+		short idadeShort=32767;
+		boolean verdadeiro=true;
+		boolean falso=false;
+		long numeroGrande=1000L;//
+		char caractere='A';//2 bytes. Converte numeros em caracteres Unicode.  valor hexadecimal
+		String nome="John";	
 	}
 
 }
