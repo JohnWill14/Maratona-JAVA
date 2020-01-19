@@ -7,6 +7,9 @@ public class MultArray{
 		//int[] cria uma referencia para um array de inteiros
 		//int[] [] cria referencia para um array de array de inteiros
 		//dias[0];//Acessa a referencia da memoria;
+		
+
+		//O new inicializa o int com 0 kkk
 		dias[0][0]=12;
 		dias[0][1]=31;
 
