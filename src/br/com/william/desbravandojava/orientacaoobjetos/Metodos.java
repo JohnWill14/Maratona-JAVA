@@ -1,4 +1,4 @@
-package br.com.william.desbravandojava;
+package br.com.william.desbravandojava.orientacaoobjetos;
 
 public class Metodos{
 	/*
