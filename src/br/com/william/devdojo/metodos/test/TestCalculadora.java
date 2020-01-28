@@ -33,5 +33,8 @@ public class TestCalculadora {
          1,2,3,4,5,6,7,8,9,10  
        };
        calc.somaArray(array);
+       
+       System.out.println("Varargs: "+calc.somaVarargs(1,2,3,4,5));
+       System.out.println("Varargs: "+calc.somaVarargs(array));
     }
 }

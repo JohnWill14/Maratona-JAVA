@@ -47,4 +47,11 @@ public class Calculadora {
        }
        System.out.println("Soma Array => "+soma);
    }
+   public int somaVarargs(int... numeros){
+       int soma=0;
+       for(int i:numeros){
+           soma+=i;
+       }
+       return soma;
+   }
 }

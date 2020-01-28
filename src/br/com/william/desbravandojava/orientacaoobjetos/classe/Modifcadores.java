@@ -1,4 +1,4 @@
-package br.com.william.desbravandojava.orientacaoobjetos;
+package br.com.william.desbravandojava.orientacaoobjetos.classe;
 
 public class Modifcadores{
 	/*
