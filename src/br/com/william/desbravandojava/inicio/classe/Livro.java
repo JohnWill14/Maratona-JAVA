@@ -13,24 +13,40 @@ public class Livro {
     private String nome;
     private String descricao;
     private double valor;
+    private Ator ator;
     private String isbn;//Numero de indentificacao internacional
     {
     this.nome="Nome nao informado";
     this.descricao="Nao possui descricao";
     this.valor=0;
     this.isbn="Nao informado";
-}
+    this.ator=null;
+    }
 
     public Livro() {
     }
 
     public Livro(String nome, String descricao, double valor, String isbn) {
+        this();
         this.nome = nome;
         this.descricao = descricao;
         this.valor = valor;
         this.isbn = isbn;
     }
+    public Livro(String nome, String descricao, double valor, String isbn,Ator ator) {
+        this(nome,descricao,valor,isbn);
+        this.ator=ator;
+    }
 
+    public Ator getAtor() {
+        return ator;
+    }
+
+    public void setAtor(Ator ator) {
+        this.ator = ator;
+    }
+    
+    
     public String getNome() {
         return nome;
     }
@@ -67,5 +83,7 @@ public class Livro {
         System.out.println("Valor: "+String.format("%.2f", this.valor));
         System.out.println("Descricao: "+this.descricao);
         System.out.println("ISBN: "+this.isbn);
+        if(this.getAtor()!=null)
+        System.out.println("Ator: "+this.getAtor().getNome());
     }
 }

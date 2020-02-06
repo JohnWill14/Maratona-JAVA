@@ -3,21 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.william.devdojo.Dblocodeinicializacao.classe;
+package br.com.william.devdojo.Fblocodeinicializacaostatic.classe;
+
+import br.com.william.devdojo.Dblocodeinicializacao.classe.*;
 
 /**
  *
  * @author usuario
  */
 public class Client {
+    //0.*-* Bloco de inicialização static só executa uma vez
     //1. Aloca-se espaço na memoria
     //2. Inicializa atributos com valor default
     //3. Bloco de inicialização é chamado pq ele he da hora
     //4. Oconstrutor é executado
-    private int[] parcelas;
+    private static int[] parcelas;
     
-    {
-        parcelas=new int[100];
+    static {//Cuidado só executa apenas uma vez !
+        System.out.println("OLA bloco inicialização");
+        Client.parcelas=new int[100];
         for(int i=1;i<=100;i++){
             parcelas[i-1]=i;
         }
@@ -26,12 +30,12 @@ public class Client {
         
     }
 
-    public int[] getParcelas() {
+    public static int[] getParcelas() {
         return parcelas;
     }
 
-    public void setParcelas(int[] parcelas) {
-        this.parcelas = parcelas;
+    public static void setParcelas(int[] parcelas) {
+       Client.parcelas = parcelas;
     }
     
     
