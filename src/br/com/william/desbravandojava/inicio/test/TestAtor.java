@@ -5,7 +5,7 @@
  */
 package br.com.william.desbravandojava.inicio.test;
 
-import br.com.william.desbravandojava.inicio.classe.Ator;
+import br.com.william.desbravandojava.inicio.classe.Autor;
 import br.com.william.desbravandojava.inicio.classe.Livro;
 
 /**
@@ -14,7 +14,7 @@ import br.com.william.desbravandojava.inicio.classe.Livro;
  */
 public class TestAtor {
     public static void main(String[] args) {
-        Ator ator=new Ator();
+        Autor ator=new Autor();
         ator.setNome("Um cara gente boa");
         ator.setEmail("gentefina@gmail.com");
         ator.setCpf("34343");

@@ -9,15 +9,15 @@ package br.com.william.desbravandojava.inicio.classe;
  *
  * @author usuario
  */
-public class Ator {
+public class Autor {
     private String nome;
     private String cpf;
     private String email;
 
-    public Ator() {
+    public Autor() {
     }
 
-    public Ator(String nome, String cpf, String email) {
+    public Autor(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -46,5 +46,4 @@ public class Ator {
     public void setEmail(String email) {
         this.email = email;
     }
-    
 }

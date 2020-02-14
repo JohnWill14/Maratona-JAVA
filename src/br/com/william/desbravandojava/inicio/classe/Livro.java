@@ -13,7 +13,7 @@ public class Livro {
     private String nome;
     private String descricao;
     private double valor;
-    private Ator ator;
+    private Autor ator;
     private String isbn;//Numero de indentificacao internacional
     {
     this.nome="Nome nao informado";
@@ -25,7 +25,9 @@ public class Livro {
 
     public Livro() {
     }
-
+    public Livro(Autor ator) {
+        this.setAtor(ator);
+    }
     public Livro(String nome, String descricao, double valor, String isbn) {
         this();
         this.nome = nome;
@@ -33,16 +35,16 @@ public class Livro {
         this.valor = valor;
         this.isbn = isbn;
     }
-    public Livro(String nome, String descricao, double valor, String isbn,Ator ator) {
+    public Livro(String nome, String descricao, double valor, String isbn,Autor ator) {
         this(nome,descricao,valor,isbn);
-        this.ator=ator;
+        this.setAtor(ator);
     }
 
-    public Ator getAtor() {
+    public Autor getAtor() {
         return ator;
     }
 
-    public void setAtor(Ator ator) {
+    public void setAtor(Autor ator) {
         this.ator = ator;
     }
     
