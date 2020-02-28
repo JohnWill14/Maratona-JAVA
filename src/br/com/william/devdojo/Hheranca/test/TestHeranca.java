@@ -17,13 +17,13 @@ public class TestHeranca {
     public static void main(String[] args) {
         Endereco endereco=new Endereco("Jardim botanico", "1112");
         
-        Pessoa p1=new Pessoa();
-        p1.setNome("John William");
-        p1.setCpf("123.332.222-66");
-        p1.setEndereco(endereco);
-        p1.imprime();
-        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-        System.out.println("/|\\/|\\/|\\/|\\/|\\/|\\/|\\/|\\/|\\");
+//        Pessoa p1=new Pessoa();
+//        p1.setNome("John William");
+//        p1.setCpf("123.332.222-66");
+//        p1.setEndereco(endereco);
+//        p1.imprime();
+//        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+//        System.out.println("/|\\/|\\/|\\/|\\/|\\/|\\/|\\/|\\/|\\");
         Funcionario f1=new Funcionario();
         f1.setNome("Augusto");
         f1.setCpf("111.453.323-76");

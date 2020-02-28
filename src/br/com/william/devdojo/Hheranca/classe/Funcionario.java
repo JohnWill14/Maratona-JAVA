@@ -12,15 +12,26 @@ package br.com.william.devdojo.Hheranca.classe;
 public class Funcionario extends Pessoa {
     private double salario;
     private String matricula;
-
+    static {
+        System.out.println("Bloco do funcionario static");
+    }
+    {
+        System.out.println("Bloco do funcionario 1");
+    }
+    {
+        System.out.println("Bloco do funcionario 2");
+    }
     public Funcionario() {
         super();
+        System.out.println("Ola o construtor Funcionario");
     }
     public Funcionario(double salario, String matricula, String nome, String cpf, Endereco endereco) {
         super(nome, cpf, endereco);
         this.salario = salario;
         this.matricula = matricula;
     }
+
+   
 
     public double getSalario() {
         return salario;

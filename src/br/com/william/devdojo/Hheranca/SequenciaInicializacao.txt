@@ -1,0 +1,12 @@
+1) Espaço na memoria alocado;
+2) É setado os valores Default dos atributos;
+3) É chamado a superclasse;
+4) É executado o bloco static e os outros blocos de inicialização finalizando
+   no construtor da superclasse;
+5) Executa na ordem os blocos da classe até o construtor.
+
+1º Todos os blocos statics da superclasse até a filha;
+2º Todos os blocos de inicialização da superclasse;
+3º O construtor da superclasse;
+4º Todos os blocos de inicialização da classe;
+5º O construtuor da classe filha.
