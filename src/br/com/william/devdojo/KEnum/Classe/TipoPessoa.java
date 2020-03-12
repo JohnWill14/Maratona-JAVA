@@ -10,7 +10,15 @@ package br.com.william.devdojo.KEnum.Classe;
  * @author usuario
  */
 public enum TipoPessoa {
-    PESSOA_FISICA(1,"Pessoa Fisica"),PESSOA_JURIDICA(2,"Pessoa Juridica");// Vem antes de td. Primeira linha
+    PESSOA_FISICA(1,"Pessoa Fisica"),PESSOA_JURIDICA(2,"Pessoa Juridica"){
+        //constamt specific class body
+        //corpo de classe especifico constante
+        @Override
+        public String getId() {
+            return "B";
+        }
+      
+    };// Vem antes de td. Primeira linha
     // /\
     ///  \
     // | Chama o construtor
@@ -23,7 +31,9 @@ public enum TipoPessoa {
     }
 
     
-
+    public String getId(){
+        return "A";
+    }
     public String getNome() {
         return nome;
     }
@@ -31,5 +41,4 @@ public enum TipoPessoa {
     public int getTipo() {
         return tipo;
     }
-    
 }//Separado por virgula

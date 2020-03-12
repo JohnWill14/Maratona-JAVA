@@ -52,7 +52,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "nome='" + nome + "', tipo=" + tipo + " "+this.tipo.getNome()+", pagamento=" + pagamento + '}';
+        return "Cliente{" + "nome='" + nome + "', tipo=" + tipo + " "+this.tipo.getTipo()+", pagamento=" + pagamento + '}';
     }
 
     

@@ -24,6 +24,7 @@ public class TestCliente {
         for (TipoPessoa value : TipoPessoa.values()) {
             System.out.println(value);
         }
+        
        TipoPessoa t=TipoPessoa.PESSOA_JURIDICA;/* 
        TipoPessoa ao criar a variavel tipo Enum ele cria tds os
        objts da lista;
