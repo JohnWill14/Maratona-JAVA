@@ -1,0 +1,5 @@
+File: Criar arquivos;
+FileReader: Criar e ler arquivos;
+BuffereReader: Otimização da FileReader;
+FileWriter: Criar e escrever arquivos;
+BufferedWriter: Otimização da FileWriter.
