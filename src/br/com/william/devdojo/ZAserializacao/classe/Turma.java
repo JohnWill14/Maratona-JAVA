@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.william.devdojo.Zserializacao.classe;
+package br.com.william.devdojo.ZAserializacao.classe;
 
 import java.io.Serializable;
 

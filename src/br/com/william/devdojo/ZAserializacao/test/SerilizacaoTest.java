@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.william.devdojo.Zserializacao.test;
+package br.com.william.devdojo.ZAserializacao.test;
 
-import br.com.william.devdojo.Zserializacao.classe.Aluno;
-import br.com.william.devdojo.Zserializacao.classe.Turma;
+import br.com.william.devdojo.ZAserializacao.classe.Aluno;
+import br.com.william.devdojo.ZAserializacao.classe.Turma;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

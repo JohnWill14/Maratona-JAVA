@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.william.devdojo.ZZcolections.test;
+package br.com.william.devdojo.Zcolections.test;
 
-import br.com.william.devdojo.ZZcolections.classe.Produto;
+import br.com.william.devdojo.Zcolections.classe.Produto;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
