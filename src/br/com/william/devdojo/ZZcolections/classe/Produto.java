@@ -15,7 +15,8 @@ public class Produto implements Comparable<Produto>{
     private Long ID;
     private String nome;
     private Double preco;
-
+    private int quantidade;
+    
     public Produto() {
     }
 
@@ -25,6 +26,21 @@ public class Produto implements Comparable<Produto>{
         this.preco = preco;
     }
 
+    public Produto(Long ID, String nome, Double preco, int quantidade) {
+        this.ID = ID;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    
     public Long getID() {
         return ID;
     }
@@ -78,8 +94,10 @@ public class Produto implements Comparable<Produto>{
 
     @Override
     public String toString() {
-        return "Produto{" + "ID=" + ID + ", nome=" + nome + ", preco=" + preco + '}';
+        return "Produto{" + "ID=" + ID + ", nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade + '}';
     }
+
+   
 
     @Override
     public int compareTo(Produto t) {
