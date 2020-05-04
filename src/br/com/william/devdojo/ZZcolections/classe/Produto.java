@@ -5,6 +5,7 @@
  */
 package br.com.william.devdojo.ZZcolections.classe;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
@@ -106,7 +107,8 @@ public class Produto implements Comparable<Produto>{
                  return this.ID.compareTo(t.getID());
             }else this.preco.compareTo(t.getPreco());
         } 
-        return this.nome.compareTo(t.getNome());
+        return this.nome.compareToIgnoreCase(t.getNome());
     }
+    
     
 }

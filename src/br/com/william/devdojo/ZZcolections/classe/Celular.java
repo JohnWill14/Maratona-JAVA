@@ -5,6 +5,8 @@
  */
 package br.com.william.devdojo.ZZcolections.classe;
 
+import java.util.Comparator;
+
 /**
  *
  * @author usuario
@@ -62,6 +64,18 @@ public class Celular {
         
         return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String toString() {
+        return "Celular{" + "nome=" + nome + ", IME=" + IME + '}';
+    }
     
-    
+    public static class CelularComparatorByName implements Comparator<Celular>{
+
+        @Override
+        public int compare(Celular t, Celular t1) {
+            return t.getNome().compareTo(t1.getNome());
+        }
+        
+    }
 }
