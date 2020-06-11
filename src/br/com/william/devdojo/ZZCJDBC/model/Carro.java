@@ -3,30 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.william.devdojo.ZZCJDBC;
-
-import java.util.Objects;
+package br.com.william.devdojo.ZZCJDBC.model;
 
 /**
  *
  * @author usuario
  */
-public class Comprador {
+public class Carro {
     private int id;
-    private String cpf;
     private String nome;
+    private String placa;
+    private Comprador comprador;
 
-    public Comprador() {
+    public Carro() {
     }
 
-    public Comprador(int id, String cof, String nome) {
+    public Carro(int id, String nome, String placa, Comprador comprador) {
         this.id = id;
-        this.cpf = cof;
         this.nome = nome;
-    }
-    public Comprador(String cof, String nome) {
-        this.cpf=cof;
-        this.nome=nome;
+        this.placa = placa;
+        this.comprador = comprador;
     }
 
     public int getId() {
@@ -37,14 +33,6 @@ public class Comprador {
         this.id = id;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -53,12 +41,26 @@ public class Comprador {
         this.nome = nome;
     }
 
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public Comprador getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(Comprador comprador) {
+        this.comprador = comprador;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + this.id;
-        hash = 53 * hash + Objects.hashCode(this.cpf);
-        hash = 53 * hash + Objects.hashCode(this.nome);
+        hash = 67 * hash + this.id;
         return hash;
     }
 
@@ -73,14 +75,8 @@ public class Comprador {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Comprador other = (Comprador) obj;
+        final Carro other = (Carro) obj;
         if (this.id != other.id) {
-            return false;
-        }
-        if (!Objects.equals(this.cpf, other.cpf)) {
-            return false;
-        }
-        if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
         return true;
@@ -88,7 +84,7 @@ public class Comprador {
 
     @Override
     public String toString() {
-        return "" + "id=" + id + ", cof=" + cpf + ", nome=" + nome+" ";
+        return "" + "id=" + id + ", nome=" + nome + ", placa=" + placa + ", comprador=" + comprador ;
     }
     
     

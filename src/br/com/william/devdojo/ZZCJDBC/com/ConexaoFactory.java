@@ -7,10 +7,15 @@ package br.com.william.devdojo.ZZCJDBC.com;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sql.RowSet;
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.JdbcRowSet;
+import javax.sql.rowset.RowSetProvider;
 
 /**
  *
@@ -37,35 +42,100 @@ public class ConexaoFactory {
         conn=null;
     }
     public static Connection getConnection(){
-        if(conn==null){
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                conn=DriverManager.getConnection("jdbc:mysql://localhost/"+URL,NOME,PASS);
-//                conn.setAutoCommit(false);
-            } catch (SQLException ex) {
-                throw new  RuntimeException(ex);
-            } catch (ClassNotFoundException ex) {
-                throw new  RuntimeException(ex);
+        try {
+            if(conn==null||conn.isClosed()){
+                
+                    Class.forName("com.mysql.jdbc.Driver");
+                    conn=DriverManager.getConnection("jdbc:mysql://localhost/"+URL,NOME,PASS);
+                conn.setAutoCommit(false);
+                 
             }
+        }catch (SQLException ex) {
+            throw new  RuntimeException(ex);
+        } catch (ClassNotFoundException ex) {
+            throw new  RuntimeException(ex);
         }
         return conn;
     }
-    public static void close(Connection conn){
+    
+    public static JdbcRowSet getRowSetConnection(){
+        JdbcRowSet rowSet=null;
         try {
-            if(conn!=null)
+            if(rowSet==null||rowSet.isClosed()){
+                
+//                    Class.forName("com.mysql.jdbc.Driver");;
+                   rowSet=  RowSetProvider.newFactory().createJdbcRowSet();
+                   rowSet.setUrl("jdbc:mysql://localhost/"+URL);
+                   rowSet.setUsername(NOME);
+                   rowSet.setPassword(PASS);
+                   rowSet.addRowSetListener(new MyRowSetListener());
+            }
+        }catch (SQLException ex) {
+            throw new  RuntimeException(ex);
+        } 
+        return rowSet;
+    }
+    public static CachedRowSet getRowSetConnectionCached(){
+        CachedRowSet rowSet=null;
+        try {
+            
+//                    Class.forName("com.mysql.jdbc.Driver");;
+                   rowSet=  RowSetProvider.newFactory().createCachedRowSet();
+                   rowSet.setUrl("jdbc:mysql://localhost/"+URL+"?relaxAutoCommit=true");
+                   rowSet.setUsername(NOME);
+                   rowSet.setPassword(PASS);
+//                   rowSet.addRowSetListener(new MyRowSetListener());
+                   
+            
+        }catch (SQLException ex) {
+            throw new  RuntimeException(ex);
+        } 
+        return rowSet;
+    }
+    public static void close(Connection conn){
+        
+        try {
+            if(conn!=null){
+                conn.commit();
                 conn.close();
+            }
         } catch (SQLException ex) {
+            try {
+                conn.rollback();
+            } catch (SQLException ex1) {
+                ex1.printStackTrace();
+            }
            throw new  RuntimeException(ex);
         }
     }
     public static void close(Connection conn,Statement stm){
+        
+        close(conn);
         try {
             if(stm!=null)
                 stm.close();
         } catch (SQLException ex) {
            throw new  RuntimeException(ex);
         }
-        close(conn);
     }
+    public static void close(Connection conn,Statement stm,ResultSet rs){
+        
+        close(conn,stm);
+        try {
+            if(rs!=null)
+                rs.close();
+        } catch (SQLException ex) {
+           throw new  RuntimeException(ex);
+        }
+    }
+    public static void close(RowSet rowSet){
+        try {
+            if(rowSet!=null)
+                rowSet.close();
+        } catch (SQLException ex) {
+           throw new  RuntimeException(ex);
+        }
+    }
+    
     
 }
