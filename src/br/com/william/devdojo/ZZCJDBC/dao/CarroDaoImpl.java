@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author usuario
  */
-public class CarroDao implements IDAO<Carro>{
+public class CarroDaoImpl implements IDAO<Carro>{
     private CompradorDao daoComprador=new CompradorDao();
     @Override
     public boolean save(Carro object) {

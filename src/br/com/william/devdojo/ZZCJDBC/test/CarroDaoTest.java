@@ -5,7 +5,7 @@
  */
 package br.com.william.devdojo.ZZCJDBC.test;
 
-import br.com.william.devdojo.ZZCJDBC.dao.CarroDao;
+import br.com.william.devdojo.ZZCJDBC.dao.CarroDaoImpl;
 import br.com.william.devdojo.ZZCJDBC.dao.CompradorDao;
 import br.com.william.devdojo.ZZCJDBC.model.Carro;
 import br.com.william.devdojo.ZZCJDBC.model.Comprador;
@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author usuario
  */
 public class CarroDaoTest {
-    private static CarroDao dao=new CarroDao();
+    private static CarroDaoImpl dao=new CarroDaoImpl();
     private static Scanner sc=new Scanner(System.in);
     private static List<Carro> listaCarro;
     private static List<Comprador> listaComprador;
