@@ -17,7 +17,17 @@ public class Pessoa {
     private String nome;
     private int idade;
     private double salario;
+    private Genero genero;
 
+    public Pessoa(String nome, int idade, double salario, Genero genero) {
+        this.nome = nome;
+        this.idade = idade;
+        this.salario = salario;
+        this.genero = genero;
+    }
+    
+    
+    
     public Pessoa(String nome, int idade, double salario) {
         this.nome = nome;
         this.idade = idade;
@@ -28,18 +38,27 @@ public class Pessoa {
     }
     public static List<Pessoa> bancoDePessoas(){
         return Arrays.asList(
-                new Pessoa("william Suane", 22, 2000d),
-                new Pessoa("John William Vicente", 19, 0d),
-                new Pessoa("Jair Messias Bolsonaro", 63, 30000d),
-                new Pessoa("Mercy", 28, 3500d),
-                new Pessoa("Ana", 19, 1895d),
-                new Pessoa("Thor", 23, 1980d),
-                new Pessoa("Hulk", 35, 8000d),
-                new Pessoa("Flash", 29, 3200d),
-                new Pessoa("Batman", 37, 10000d),
-                new Pessoa("Lanterna Verde", 24, 5000d)
+                new Pessoa("william Suane", 22, 2000d, Genero.MASCULINO),
+                new Pessoa("John William Vicente", 19, 0d, Genero.MASCULINO),
+                new Pessoa("Jair Messias Bolsonaro", 63, 30000d, Genero.MASCULINO),
+                new Pessoa("Mercy", 28, 3500d, Genero.FEMININO),
+                new Pessoa("Ana", 17, 1895d, Genero.FEMININO),
+                new Pessoa("Thor", 23, 1980d, Genero.MASCULINO),
+                new Pessoa("Hulk", 35, 8000d, Genero.MASCULINO),
+                new Pessoa("Flash", 29, 3200d, Genero.MASCULINO),
+                new Pessoa("Batman", 37, 10000d, Genero.MASCULINO),
+                new Pessoa("Lanterna Verde", 17, 5000d, Genero.MASCULINO)
         );
     }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -66,7 +85,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", idade=" + idade + ", salario=" + salario + '}';
+        return nome ;
     }
 
     @Override

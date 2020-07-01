@@ -7,6 +7,7 @@ package br.com.william.devdojo.ZZkstreams.test;
 
 import br.com.william.devdojo.ZZkstreams.classes.Pessoa;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -37,14 +38,21 @@ public class StreamTest4Reduce {
                 .map(Pessoa::getSalario)
                 .reduce( Double::sum)
                 .get();
-        Double sumSal2=streamPessoa.filter(p->p.getSalario()>400)
+        Double sumSal2=Pessoa.bancoDePessoas().stream().filter(p->p.getSalario()>400)
                 .mapToDouble(Pessoa::getSalario)
                 .sum();//Mais rapido
         System.out.println(sumSal);
         System.out.println(sumSal2);
         
+        List<Integer> listaDeNumeros=Arrays.asList(2,3,5,1,2,9,7);
+        int soma=listaDeNumeros.stream()
+                .mapToInt(Integer::intValue)
+//                .max().getAsInt();
+                .min().getAsInt();
+        System.out.println(soma);
+                
     }
-    public static Stream getStream(){
+    public static Stream<Integer> getStream(){
         return Arrays.asList(1,2,3,4,5,6,7,8,9).stream();
     }
 }
